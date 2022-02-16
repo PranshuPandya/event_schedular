@@ -51,3 +51,11 @@ const keventRectangleBoxDecoration =
   BoxShadow(
       color: Color(0xff323247), offset: Offset(3.0, 6.0), blurRadius: 10.0),
 ]);
+
+const keventBoxUpBoxDecoration =
+    BoxDecoration(color: Colors.black, boxShadow: [
+  BoxShadow(
+      color: Color(0xff323247), offset: Offset(3.0, 6.0), blurRadius: 10.0),
+]);
+const keventBoxDownBoxDecoration =
+    BoxDecoration(color: Colors.white, );

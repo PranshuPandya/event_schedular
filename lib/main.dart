@@ -1,4 +1,6 @@
+import 'package:event_schedular/screens/event_screen.dart';
 import 'package:event_schedular/screens/homescreen.dart';
+import 'package:event_schedular/screens/landing_page.dart';
 import 'package:event_schedular/screens/reminders_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: EventScreen(),
     );
   }
 }
