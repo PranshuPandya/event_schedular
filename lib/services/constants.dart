@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 const kaccount = Icon(
-  Icons.account_circle_rounded,
-  size: 37.0,
+  Icons.person_outlined,
+  color: Colors.black,
+);
+
+const knotificationnone = Icon(
+  Icons.notifications_none,
   color: Colors.black,
 );
 const ktextSpanOne = TextSpan(

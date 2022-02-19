@@ -1,3 +1,4 @@
+import 'package:event_schedular/components/calendar.dart';
 import 'package:event_schedular/components/rounded_button.dart';
 import 'package:event_schedular/services/constants.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +66,10 @@ class EventBoxes extends StatelessWidget {
                         ),
                       ),
                     ),
+                    const Padding(
+                      padding: EdgeInsets.only(right:10.0),
+                      child: Calendar(color: Color(0xffDD3730),)
+                    ),
                   ],
                 ),
               ),
@@ -126,34 +131,31 @@ class EventBoxes extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(
-                                bottom: 14, left: 12, top: 10),
-                            child:  RoundedButton(
-                              text: 'Pay',
-                              onPressed: () {},
-                              colour: Color(0xff6FCF97),
-                              textColor: Colors.white,
-                              fontSize: 14,
-                              radius: 8,
-                              height: 36,
-                              width: 66,
-                            )
-                          ),
+                              padding: const EdgeInsets.only(
+                                  bottom: 14, left: 12, top: 10),
+                              child: RoundedButton(
+                                text: 'Pay',
+                                onPressed: () {},
+                                colour: Color(0xff6FCF97),
+                                textColor: Colors.white,
+                                fontSize: 14,
+                                radius: 8,
+                                height: 36,
+                                width: 66,
+                              )),
                           Padding(
-                            padding: const EdgeInsets.only(
-                                bottom: 14, right: 12, top: 10),
-                            child: RoundedButton(
-                              text: 'Undo RSVP',
-                              onPressed: () {},
-                              colour: Color(0xff3D55BE),
-                              textColor: Colors.white,
-                              fontSize: 14,
-                              radius: 100,
-                              height: 40,
-                              width: 121,
-                              
-                            )
-                          ),
+                              padding: const EdgeInsets.only(
+                                  bottom: 14, right: 12, top: 10),
+                              child: RoundedButton(
+                                text: 'Undo RSVP',
+                                onPressed: () {},
+                                colour: Color(0xff3D55BE),
+                                textColor: Colors.white,
+                                fontSize: 14,
+                                radius: 100,
+                                height: 40,
+                                width: 121,
+                              )),
                         ])
                   ],
                 ),

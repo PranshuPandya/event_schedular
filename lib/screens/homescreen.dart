@@ -1,3 +1,4 @@
+import 'package:event_schedular/components/bottom_nav_bar.dart';
 import 'package:event_schedular/services/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -24,9 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         leading: Builder(
           builder: (context) => IconButton(
-            onPressed: () {
-              // Scaffold.of(context).openDrawer();
-            },
+            onPressed: () {},
             icon: kaccount,
           ),
         ),
@@ -35,11 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.only(right: 20.0),
             child: GestureDetector(
               onTap: () {},
-              child: const Icon(
-                Icons.notifications,
-                size: 26.0,
-                color: Colors.black,
-              ),
+              child: knotificationnone,
             ),
           ),
         ],
@@ -49,12 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          items: kbottomNavigationBarItemlist,
-          currentIndex: _selectedIndex,
-          selectedItemColor: kselectedItemColor,
-          onTap: _onItemTapped,
-          selectedIconTheme: kselectedIconThemeData),
+      bottomNavigationBar: BottomNavBar(),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
@@ -87,36 +77,20 @@ class Events extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print(userName.toString());
-    // return StreamBuilder<QuerySnapshot>(
-    //   stream: groups.where('users', arrayContains: userName).snapshots(),
-    //   builder: (context, snapshot) {
     const eventRectangle = EventRectangle(
       groupName: "Pranshu",
       placeholder: 'Placeholder',
     );
     List<EventRectangle> eventRectangles = [eventRectangle];
-    //     if (!snapshot.hasData) {
-    //       return Center(
-    //         child: CircularProgressIndicator(
-    //           backgroundColor: Colors.grey,
-    //         ),
-    //       );
-    //     }
-    //     final groups = snapshot.data!.docs;
-    //     for (var group in groups) {
-    //       final groupName = group['groupName'];
-    //       final groupRectangle = GroupRectangle(groupName: groupName);
-    eventRectangles.add(eventRectangle);
-    eventRectangles.add(eventRectangle);
-    eventRectangles.add(eventRectangle);
-    eventRectangles.add(eventRectangle);
-    eventRectangles.add(eventRectangle);
-    eventRectangles.add(eventRectangle);
-    eventRectangles.add(eventRectangle);
-    eventRectangles.add(eventRectangle);
 
-    //     }
+    eventRectangles.add(eventRectangle);
+    eventRectangles.add(eventRectangle);
+    eventRectangles.add(eventRectangle);
+    eventRectangles.add(eventRectangle);
+    eventRectangles.add(eventRectangle);
+    eventRectangles.add(eventRectangle);
+    eventRectangles.add(eventRectangle);
+    eventRectangles.add(eventRectangle);
 
     return ListView.separated(
       separatorBuilder: (context, index) {
@@ -129,7 +103,5 @@ class Events extends StatelessWidget {
         return eventRectangles[index];
       },
     );
-    //     },
-    //   );
   }
 }
