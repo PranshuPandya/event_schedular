@@ -1,12 +1,12 @@
-import 'package:event_schedular/components/bottom_nav_bar.dart';
-import 'package:event_schedular/components/eventboxes.dart';
-import 'package:event_schedular/services/constants.dart';
+import 'package:event_schedular_flutter/components/bottom_nav_bar.dart';
+import 'package:event_schedular_flutter/components/eventboxes.dart';
+import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../components/eventboxes.dart';
 
 class EventScreen extends StatefulWidget {
-  static const String id = 'reminder_screen';
+  static const String id = 'event_screen';
 
   @override
   _EventScreenState createState() => _EventScreenState();
@@ -18,13 +18,12 @@ class _EventScreenState extends State<EventScreen> {
     super.initState();
   }
 
-  int _selectedIndex = 0;
   final List<bool> _isSelected = [true, false];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(calledfrom: 1),
       appBar: AppBar(
         leading: Builder(
           builder: (context) => IconButton(
@@ -63,10 +62,6 @@ class _EventScreenState extends State<EventScreen> {
                   textAlign: TextAlign.left,
                 ),
               ),
-              // const Padding(
-              //   padding: EdgeInsets.only(top: 18.0, right: 24.0),
-              //   child:
-              // ),
               Row(
                 children: [
                   const Padding(
@@ -130,12 +125,6 @@ class _EventScreenState extends State<EventScreen> {
       ),
     );
 
-  }
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
   }
 }
 

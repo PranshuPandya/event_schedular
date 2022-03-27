@@ -1,6 +1,6 @@
-import 'package:event_schedular/components/calendar.dart';
-import 'package:event_schedular/components/rounded_button.dart';
-import 'package:event_schedular/services/constants.dart';
+import 'package:event_schedular_flutter/components/calendar.dart';
+import 'package:event_schedular_flutter/components/rounded_button.dart';
+import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
 class EventBoxes extends StatelessWidget {
@@ -67,8 +67,10 @@ class EventBoxes extends StatelessWidget {
                       ),
                     ),
                     const Padding(
-                      padding: EdgeInsets.only(right:10.0),
-                      child: Calendar(color: Color(0xffDD3730),)
+                      padding: EdgeInsets.only(right: 10.0),
+                      child: Calendar(
+                        color: Color(0xffDD3730),
+                      ),
                     ),
                   ],
                 ),

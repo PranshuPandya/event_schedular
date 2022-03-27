@@ -1,4 +1,4 @@
-import 'package:event_schedular/services/constants.dart';
+import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../components/reminderrectangle.dart';
@@ -32,11 +32,13 @@ class _ReminderScreenState extends State<ReminderScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
               child: const Icon(
-                Icons.cancel,
+                Icons.cancel_outlined,
                 size: 26.0,
-                color: Colors.black,
+                color: Color(0xffdd3730),
               ),
             ),
           ),

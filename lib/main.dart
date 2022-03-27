@@ -1,71 +1,36 @@
-import 'package:event_schedular/screens/event_screen.dart';
-import 'package:event_schedular/screens/homescreen.dart';
-import 'package:event_schedular/screens/landing_page.dart';
-import 'package:event_schedular/screens/reminders_screen.dart';
+import 'package:event_schedular_flutter/components/datetime.dart';
+import 'package:event_schedular_flutter/components/overlaylearn.dart';
+import 'package:event_schedular_flutter/screens/clubsidescreens/Android_twenty_six.dart';
+import 'package:event_schedular_flutter/screens/clubsidescreens/android_thirty.dart';
+import 'package:event_schedular_flutter/screens/clubsidescreens/android_thirty_one.dart';
+import 'package:event_schedular_flutter/screens/clubsidescreens/new_announcement_screen.dart';
+import 'package:event_schedular_flutter/screens/clubsidescreens/new_mail_screen.dart';
+import 'package:event_schedular_flutter/screens/event_screen.dart';
+import 'package:event_schedular_flutter/screens/homescreen.dart';
+import 'package:event_schedular_flutter/screens/reminders_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(EventSchedular());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class EventSchedular extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: EventScreen(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      initialRoute:AndroidTwentySix.id,
+      routes: {
+        HomeScreen.id: (context) => HomeScreen(),
+        ReminderScreen.id: (context) => ReminderScreen(),
+        EventScreen.id: (context) => EventScreen(),
+        AndroidThirty.id: (context) => const AndroidThirty(),
+        AndroidTwentySix.id: (context) => const AndroidTwentySix(),
+        AndroidThirtyOne.id: (context) => const AndroidThirtyOne(),
+        DateTimeLearn.id: (context) =>  DateTimeLearn(),
+        NewAnnouncementScreen.id: (context) => NewAnnouncementScreen(),
+        NewMailScreen.id: (context) => NewMailScreen(),
+        Example2.id: (context) => Example2(),
+      },
     );
   }
 }

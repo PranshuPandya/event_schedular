@@ -1,5 +1,6 @@
-import 'package:event_schedular/components/bottom_nav_bar.dart';
-import 'package:event_schedular/services/constants.dart';
+import 'package:event_schedular_flutter/components/bottom_nav_bar.dart';
+import 'package:event_schedular_flutter/screens/reminders_screen.dart';
+import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../components/eventrectangle.dart';
@@ -33,7 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, ReminderScreen.id);
+              },
               child: knotificationnone,
             ),
           ),
@@ -44,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: const BottomNavBar(calledfrom:0),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
@@ -62,12 +65,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
-  }
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
   }
 }
 

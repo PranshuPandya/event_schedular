@@ -1,4 +1,4 @@
-import 'package:event_schedular/services/constants.dart';
+import 'package:event_schedular_flutter/services/constants.dart';
 import 'package:flutter/material.dart';
 
 class ReminderRectangle extends StatelessWidget {
